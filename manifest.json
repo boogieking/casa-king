@@ -2,10 +2,11 @@
   "name": "Casa King — San Miguel Hub",
   "short_name": "Casa King",
   "description": "Lists, cleaning schedule and AI assistant for the King family in San Miguel de Allende",
-  "start_url": "/",
+  "start_url": "/casa-king/",
+  "scope": "/casa-king/",
   "display": "standalone",
-  "background_color": "#1A1814",
-  "theme_color": "#1A1814",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
   "orientation": "portrait",
   "icons": [
     {
