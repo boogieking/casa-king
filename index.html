@@ -560,7 +560,7 @@ function itemHTML(it){
     <div class="item-dot" style="background:${c.dot}"></div>
     <span class="item-text">${esc(it.text)}</span>
     ${it.done
-      ? `<button class="item-readd" onclick="readd(${it.id})">↩</button>`
+      ? `<button class="item-readd" onclick="readd(${it.id})">↩</button><button class="item-del" onclick="del(${it.id})">✕</button>`
       : `<button class="item-del" onclick="del(${it.id})">✕</button>`}
   </div>`;
 }
