@@ -374,7 +374,7 @@ body{
     <div class="nav-icon">🇲🇽</div>
     <div class="nav-label">Español</div>
   </div>
-  <div class="nav-item" onclick="window.open('https://boogieking.github.io/cam-secure','_blank')">
+  <div class="nav-item" onclick="window.open('https://cam-secure.netlify.app/securecam15.html','_blank')">
     <div class="nav-icon">📷</div>
     <div class="nav-label">Cams</div>
   </div>
@@ -470,7 +470,8 @@ async function seedItems(){
 async function addItem(){
   const inp=document.getElementById('ni');
   const text=inp.value.trim();if(!text)return;
-  const isDup=items.some(i=>i.cat===selectedCat&&i.text.trim().toLowerCase()===text.toLowerCase()&&!i.done);
+  const norm=s=>s.trim().replace(/\s+/g,' ').toLowerCase();
+  const isDup=items.some(i=>norm(i.text)===norm(text));
   if(isDup){inp.select();inp.style.outline='2px solid #f87171';setTimeout(()=>inp.style.outline='',1200);return;}
   inp.value='';
   const res=await sbFetch('ck_items',{method:'POST',prefer:'return=representation',body:JSON.stringify({cat:selectedCat,text,done:false})});
